@@ -1,0 +1,25 @@
+@import '../../../assets/scss/variables';
+
+.card{
+    width: 40rem;
+    height: 33rem;
+
+    label{
+        color: $violet;
+        font-weight: $fw_600;
+    }
+
+    .form-group{
+        margin-bottom: 0.5rem;
+        height: 5rem;
+
+        .form-text{
+            color: $red;
+        }
+    }
+}
+
+.preview-image{
+    border: 2px dotted $dark_blue;
+    height: 100%;
+}

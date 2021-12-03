@@ -1,0 +1,92 @@
+@import './assets/scss/variables';
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: $poppins;
+    background: $very_dark_blue;
+}
+
+#container{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+.container{
+    background-color: $dark_blue;
+    padding: 1rem;
+    height: auto;
+}
+
+footer{
+    text-align: center;
+    padding: 20px;
+}
+
+.container-search{
+    .bx{
+        color: $soft_orange;
+        margin-right: 3px;
+    }
+    input{
+        border: none;
+        background: transparent;
+        color: $white;
+        width: 90%;
+    }
+}
+
+
+input::placeholder{
+    color: $white;
+    margin-right: 2px;
+}
+
+input:focus{
+    outline: none;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+//Override styles
+.bg-dark{
+    background: $very_dark_blue !important;
+}
+
+.active{
+    border-bottom: 1px solid $red;
+    transition: all 1s ease-in-out;
+}
+
+.btn{
+    border: 0;
+}
+
+.btn-primary{
+    background: $blue;
+}
+
+.btn-danger{
+    background: $red;
+}
+
+.table-responsive{
+    max-height: 25rem;
+}
+
+.table-responsive::-webkit-scrollbar{
+    width: 10px;
+}
+.table-responsive::-webkit-scrollbar-track{
+    background: transparent;
+}
+.table-responsive::-webkit-scrollbar-thumb{
+    background-color: $red;
+    border-radius: 0.3rem;
+}

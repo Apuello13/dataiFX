@@ -1,0 +1,69 @@
+<div class="d-flex align-items-center" style="height: 100vh">
+  <div class="card m-auto p-2">
+    <div class="row">
+      <div class="col-6">
+        <label>Preview Image</label>
+        <div class="preview-image rounded">
+          <img id="image-preview" width="100%" height="100%"/>
+        </div>
+      </div>
+      <div class="col-6 p-3">
+        <form [formGroup]="estudianteForm" (ngSubmit)="submitForm()">
+          <div class="form-group">
+            <label>Name*</label>
+            <input type="text" class="form-control" formControlName="name" />
+            <div class="form-text" *ngIf="isValidField('name')">
+              Este campo es obligatorio
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Patronus*</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="patronus"
+            />
+            <div class="form-text" *ngIf="isValidField('patronus')">
+              Este campo es obligatorio
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Date of Birth*</label>
+            <input
+              type="date"
+              class="form-control"
+              formControlName="yearOfBirth"
+            />
+            <div class="form-text" *ngIf="isValidField('yearOfBirth')">
+              Este campo es obligatorio
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Image</label>
+            <span
+              class="form-control text-center pointer"
+              (click)="image.click()"
+            >
+              <i class="bx bx-upload"></i>
+              Choose a file
+            </span>
+            <input type="file" id="image" hidden #image (change)="setImage($event)" accept="image/*"/>
+          </div>
+          <p class="text-center">Campos Obligatorios*</p>
+          <div class="d-flex justify-content-between mt-4">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="!estudianteForm.valid"
+            >
+              Guardar
+            </button>
+            <button class="btn btn-danger" routerLink="/estudiantes">
+              Volver
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

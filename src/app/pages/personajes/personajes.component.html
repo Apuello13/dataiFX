@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="form-group">
+    <label>Escuela</label>
+    <select class="form-control" (change)="getEscuela($event)">
+      <option value="">Selecccione...</option>
+      <option *ngFor="let escuela of escuelas" [value]="escuela">
+        {{ escuela | titlecase }}
+      </option>
+    </select>
+  </div>
+</div>
+<app-table [personas]="personajes"></app-table>
